@@ -20,4 +20,8 @@ export class ClientService {
   getClientsById(id: number) {
     return this.http.get("http://localhost:8000/api/comptes/" + id);
   }
+
+  updateClient(id: number, data) {
+    return this.http.put("http://localhost:8000/api/comptes/" + id, data);
+  }
 }

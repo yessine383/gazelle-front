@@ -14,7 +14,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/maps', title: 'Transaction', icon: 'nc-pin-3', class: '' },
     { path: '/notifications', title: 'Actualité', icon: 'nc-bell-55', class: '' },
     { path: '/user', title: 'User Profile', icon: 'nc-single-02', class: '' },
-    { path: '/table', title: 'CompteB2B', icon: 'nc-tile-56', class: '' },
+    { path: '/comptes', title: 'CompteB2B', icon: 'nc-tile-56', class: '' },
     { path: '/typography', title: 'Statistique', icon: 'nc-caps-small', class: '' },
     // { path: '/FormClient', title: 'client', icon: 'nc-caps-small', class: '' },
 

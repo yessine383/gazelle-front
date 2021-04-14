@@ -18,10 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { authInterceptorProviders } from './helpers/auth.interceptor';
-import { FormClientComponent } from './pages/form-client/form-client.component';
 import { FormContratComponent } from './pages/form-contrat/form-contrat.component';
 import { AuthGuard } from './helpers/auth.guard';
-
 
 
 @NgModule({
@@ -29,7 +27,6 @@ import { AuthGuard } from './helpers/auth.guard';
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    FormClientComponent,
     FormContratComponent
   ],
   imports: [
