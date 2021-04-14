@@ -1,0 +1,121 @@
+<div class="col-md-12 ">
+
+    <form [formGroup]="compte" (ngSubmit)="onSubmit()">
+
+        <h1 style="color: orange;">Créer compte client</h1>
+        <div class="col-md-8 mb-5">
+            <label class=" required form-label" style="font-size: small;">Type</label>
+            <select class="form-control" required="required" name="type">
+                <option selected>Corporate</option>
+                <option>Agence A</option>
+                <option>Agence B</option>
+
+            </select>
+        </div><br>
+
+
+        <div class="col-md-8 mb-5">
+            <label class="required" style="font-size: small;"> Office ID </label>
+            <input type="text" class="form-control" formControlName="office" required="required" placeholder="Office ID"
+                maxlength="100"><br>
+        </div><br>
+
+
+        <div class="col-md-8 mb-5">
+            <label class=" required form-label" style="font-size: small;">Devise</label>
+            <select class="form-control" required="required" name="devise">
+                <option selected>TND</option>
+                <option>EURO</option>
+                <option>Dinar Tunisien</option>
+                <option>Dollar US</option>
+                <option>Dollar Canadien</option>
+            </select>
+        </div><br>
+
+
+        <div class="col-md-8 mb-5">
+            <label class="required" style="font-size: small;">Nom Organisme*</label>
+            <input type="text" class="form-control" name="organisme" required="required" maxlength="100"
+                placeholder="NOM">
+        </div><br>
+
+        <div class="col-md-8 mb-5">
+            <label class="required" style="font-size: small;">Matricule fiscal*</label>
+            <input type="text" class="form-control" name="matricule" required="required" placeholder="MATRICULE"
+                maxlength="100"><br>
+        </div>
+
+
+
+        <div class="col-md-8 mb-5">
+            <label class="required" style="font-size: small;"> Propriétaire </label>
+            <input type="text" class="form-control" name="proprietaire" required="required" placeholder="PROPRIETAIRE"
+                maxlength="100"><br>
+        </div>
+
+
+
+        <div class="col-md-8 mb-5">
+            <label class="required" style="font-size: small;">Responsable*</label>
+            <input type="text" class="form-control" name="responsable" required="required" placeholder="RESPONSABLE"
+                maxlength="100"><br>
+        </div>
+
+        <div class="col-md-8 mb-5">
+            <label class="required" style="font-size: small;">Adresse*</label>
+            <input type="textarea" class="form-control" name="adresse" required="required" placeholder="ADRESSE"><br>
+        </div>
+
+
+
+
+
+        <div class="col-md-8 mb-5">
+            <label class="required form-label" style="font-size: small;">téléphone*</label>
+
+
+            <div class="col-md-6"><input type="tel" name="tel1" placeholder="TELEPHONE1" required="required"
+                    class="form-control" size="10" minlength="8" maxlength="12" /></div>
+
+
+
+        </div><br>
+
+
+
+        <div class="col-md-8 mb-5" style="font-size: small;">
+            <label class="required form-label">Fax</label>
+            <input type="tel" name="fax" class="form-control" placeholder="FAX" size="10" minlength="8"
+                maxlength="12" />
+        </div>
+        <br>
+        <div class="col-md-8 mb-5" style="font-size: small;">
+            <label class="required form-label">Email*</label>
+            <input type="email" name="email" class="form-control" placeholder="EMAIL" required="required"
+                maxlength="255">
+        </div><br>
+        <div class="col-md-8 mb-5">
+            <label class="required form-label" style="font-size: small;">Mot de passe</label>
+            <input type="password" class="form-control" name="password" placeholder="LOGO" required="required"
+                maxlength="255">
+
+        </div><br>
+        <div class="col-md-8 mb-5">
+            <label class=" required form-label" style="font-size: small;">Actif </label>
+            <select required="required" style="width: 30%;" name="actif">
+                <option selected>OUI</option>
+                <option>NON</option>
+
+            </select>
+        </div><br>
+        <div class="col-md-8 mb-5">
+            <label class="required form-label" style="font-size: small;">URL Logo</label>
+            <input type="url" class="form-control" name="url" placeholder="LOGO" required="required" maxlength="255">
+
+        </div><br>
+        <div class="col-md-8 mb-5 text-center">
+
+            <button class="btn btn-primary btn-lg">Ajouter</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,155 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"> Compte B2B</h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>
+                Organisme
+              </th>
+              <th>
+                Type
+              </th>
+              <th>
+                Office ID
+              </th>
+              <th>
+                Propriétaire
+              </th>
+              <th>
+                devise
+              </th>
+              <th>
+                Matricule fiscale
+              </th>
+              <th>
+                actif
+              </th>
+              <th>
+                action
+              </th>
+              <th>
+
+              </th>
+              <th>
+
+              </th>
+
+
+
+            </thead>
+            <tbody>
+              <tr *ngFor="let e of clientList">
+                <td> {{e.nomOrganisme}}</td>
+                <td> {{e.type}}</td>
+                <td> {{e.office_id}}</td>
+                <td>{{e.proprietaire}}</td>
+                <td>{{e.devise}}</td>
+                <td>{{e.matricule_fiscal}}</td>
+                <td>{{e.actif}}</td>
+                <td><button class="btn btn-primary" (click)="getClientInfo(longContent , e.id)">
+                    contrats </button>
+                </td>
+                <td><button class="btn btn-primary" routerLink="/FormClient">Modifier
+                  </button>
+                </td>
+                <td><button class="btn btn-primary" routerLink="/FormContrat">Ajout Contrat
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 text-center">
+
+    <button type="button" class="btn btn-success btn-lg" routerLink="/FormClient">Ajouter Client</button>
+
+  </div>
+
+
+
+  <ng-template #longContent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Contrats</h4>
+      <button type="button" class="close" aria-label="Close" (click)='closeModal(reason)'>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <table class="table">
+
+        <!--code balance et table client et info client ici-->
+        <thead class=" text-primary">
+          <th>
+            Libellé
+          </th>
+          <th>
+            début contrat
+          </th>
+          <th>
+            fin contrat
+          </th>
+          <th>
+            début date de voyages
+          </th>
+          <th>
+            fin date de voyages
+          </th>
+          <th>
+            actif
+          </th>
+          <th>
+            time
+          </th>
+          <th>
+            time cc
+          </th>
+          <th>
+            time balance
+          </th>
+          <th>
+
+          </th>
+          <th>
+
+          </th>
+
+
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of contractList">
+
+            <td> {{e.libelle}}</td>
+            <td> {{e.date_contrat}}</td>
+            <td> {{e. date_fin_contrat}}</td>
+            <td>{{e.date_voyage}}</td>
+            <td>{{e.date_fin_voyage}}</td>
+            <td>{{e.actif}}</td>
+            <td> {{e.pay_later_time}}</td>
+            <td> {{e.min_temps_cc}}</td>
+            <td> {{e.min_temps_balance}}</td>
+            <td><button class="btn btn-primary" routerLink="/FormContrat">Modifer Contrat
+              </button>
+            </td>
+
+
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
