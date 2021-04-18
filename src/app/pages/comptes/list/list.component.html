@@ -54,7 +54,8 @@
                                 <td><button class="btn btn-primary" (click)="getClientInfo(longContent , e.id)">
                                         contrats </button>
                                 </td>
-                                <td><button class="btn btn-primary" routerLink="/comptes/{{e.id}}">Modifier
+                                <td><button background-color: #4CAF50; class="btn btn-primary"
+                                        routerLink="/comptes/{{e.id}}">Modifier
                                     </button>
                                 </td>
                                 <td><button class="btn btn-primary" routerLink="/FormContrat">Ajout Contrat
@@ -70,7 +71,7 @@
 
     <div class="col-md-12 text-center">
 
-        <button type="button" class="btn btn-success btn-lg" routerLink="/FormClient">Ajouter Client</button>
+        <button type="button" class="btn btn-success btn-lg" (click)="redirectToAddClient()">Ajouter Client</button>
 
     </div>
 

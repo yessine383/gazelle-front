@@ -5,10 +5,11 @@ import { ComptesRoutingModule } from './comptes-routing.module';
 import { ListComponent } from './list/list.component';
 import { EditComponent } from './edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddComponent } from './add/add.component';
 
 
 @NgModule({
-  declarations: [ListComponent, EditComponent],
+  declarations: [ListComponent, EditComponent, AddComponent],
   imports: [
     CommonModule,
     ComptesRoutingModule,

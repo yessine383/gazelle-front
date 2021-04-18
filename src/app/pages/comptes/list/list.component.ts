@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { NgbModal, NgbModalOptions, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ClientService } from 'app/services/client.service';
 import { ContratService } from 'app/services/contrat.service';
@@ -24,7 +25,8 @@ export class ListComponent implements OnInit {
     private clientservice: ClientService,
     private modalService: NgbModal,
     private contratService: ContratService,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {
   }
   ngOnInit() {
@@ -61,5 +63,10 @@ export class ListComponent implements OnInit {
     this.modalService.open(content, this.modalOption);
   }
 
+
+  redirectToAddClient() {
+    this.router.navigateByUrl("/comptes/add")
+
+  }
 
 }
