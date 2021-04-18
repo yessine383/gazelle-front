@@ -10,12 +10,12 @@ export interface RouteInfo {
 
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard', icon: 'nc-bank', class: '' },
-    { path: '/icons', title: 'Reclamation', icon: 'nc-diamond', class: '' },
-    { path: '/maps', title: 'Transaction', icon: 'nc-pin-3', class: '' },
-    { path: '/notifications', title: 'Actualité', icon: 'nc-bell-55', class: '' },
-    { path: '/user', title: 'User Profile', icon: 'nc-single-02', class: '' },
     { path: '/comptes', title: 'CompteB2B', icon: 'nc-tile-56', class: '' },
-    { path: '/typography', title: 'Statistique', icon: 'nc-caps-small', class: '' },
+    // { path: '/icons', title: 'Reclamation', icon: 'nc-diamond', class: '' },
+    // { path: '/maps', title: 'Transaction', icon: 'nc-pin-3', class: '' },
+    // { path: '/notifications', title: 'Actualité', icon: 'nc-bell-55', class: '' },
+    // { path: '/user', title: 'User Profile', icon: 'nc-single-02', class: '' },
+    // { path: '/typography', title: 'Statistique', icon: 'nc-caps-small', class: '' },
     // { path: '/FormClient', title: 'client', icon: 'nc-caps-small', class: '' },
 
 ];

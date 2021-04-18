@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ClientService } from 'app/services/client.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add',
@@ -17,7 +18,8 @@ export class AddComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private clientservice: ClientService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -35,7 +37,7 @@ export class AddComponent implements OnInit {
       officeId: [''],
       devise: [''],
       organisme: [''],
-      matricule: [''],
+      matriculeFiscale: [''],
       proprietaire: [''],
       responsable: [''],
       adresse: [''],
@@ -68,7 +70,7 @@ export class AddComponent implements OnInit {
           officeId,
           devise,
           organisme,
-          matricule: matriculeFiscale,
+          matriculeFiscale,
           proprietaire,
           responsable,
           adresse,
@@ -84,9 +86,15 @@ export class AddComponent implements OnInit {
       return;
     }
     const data = this.form.value;
-    console.log(data);
+    const actif = data['actif'];
+    delete data['actif'];
+    data['actif'] = actif === "false" ? false : true;
     this.clientservice.addClient(data).subscribe((data) => {
       console.log('data', data)
+      if (data) {
+        this.form.reset();
+        this.toastr.success("Compte ajouté avec succès");
+      }
     });
   }
 

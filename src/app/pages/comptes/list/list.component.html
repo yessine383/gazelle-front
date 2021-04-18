@@ -58,7 +58,11 @@
                                         routerLink="/comptes/{{e.id}}">Modifier
                                     </button>
                                 </td>
-                                <td><button class="btn btn-primary" routerLink="/FormContrat">Ajout Contrat
+                                <td><button background-color: #4CAF50; class="btn btn-primary"
+                                        (click)="deleteCompte(e.id)">Supprimer
+                                    </button>
+                                </td>
+                                <td><button class="btn btn-primary" routerLink="/contracts/add/{{e.id}}">Ajout Contrat
                                     </button>
                                 </td>
                             </tr>
@@ -99,20 +103,9 @@
                     <th>
                         fin contrat
                     </th>
-                    <th>
-                        début date de voyages
-                    </th>
-                    <th>
-                        fin date de voyages
-                    </th>
+
                     <th>
                         actif
-                    </th>
-                    <th>
-                        time
-                    </th>
-                    <th>
-                        time cc
                     </th>
                     <th>
                         time balance
@@ -132,14 +125,9 @@
                         <td> {{e.libelle}}</td>
                         <td> {{e.date_contrat}}</td>
                         <td> {{e. date_fin_contrat}}</td>
-                        <td>{{e.date_voyage}}</td>
-                        <td>{{e.date_fin_voyage}}</td>
                         <td>{{e.actif}}</td>
-                        <td> {{e.pay_later_time}}</td>
-                        <td> {{e.min_temps_cc}}</td>
-                        <td> {{e.min_temps_balance}}</td>
-                        <td><button class="btn btn-primary" routerLink="/FormContrat">Modifer Contrat
-                            </button>
+                        <td><a class="btn btn-primary" href="/contracts/{{e.id}}">Modifer Contrat
+                            </a>
                         </td>
 
 

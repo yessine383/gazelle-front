@@ -1,0 +1,108 @@
+<div class="col-md-12 ">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <h1 style="color: orange;"> Contrat</h1>
+
+        <div class="col-md-8 mb-5">
+            <label class="required" style="font-size: small;"> Libellé* </label>
+            <input type="text" class="form-control" formControlName="libelle" required="required" placeholder="Libellé"
+                maxlength="100"><br>
+        </div><br>
+
+        <!--  <div class="col-md-8 mb-5">
+            <label class="required form-label" style="font-size: small;">Date début/fin contrat*</label>
+            <div class="row">
+                <div class="col-md-6"><input type="date" placeholder="Date debut contrat" required="required"
+                        class="form-control" size="10" minlength="8" maxlength="12" /></div><br>
+                <div class="col-md-6"><input type="date" placeholder="Date fin contrat" required="required"
+                        class="form-control" size="10" minlength="8" maxlength="12" /></div>
+            </div>
+        </div><br>
+
+
+        <div class="col-md-8 mb-5">
+            <label class="required" style="font-size: small;">Minimum Garanti</label>
+            <input type="text" class="form-control" required="required" maxlength="100" placeholder="">
+        </div><br>
+
+        <div class="col-md-8 mb-5">
+            <label class="required form-label" style="font-size: small;">Date début/fin voyage </label>
+            <div class="row">
+                <div class="col-md-6"><input type="date" placeholder="Date debut voyage" required="required"
+                        class="form-control" size="10" minlength="8" maxlength="12" /></div><br>
+                <div class="col-md-6"><input type="date" placeholder="Date fin voyage" required="required"
+                        class="form-control" size="10" minlength="8" maxlength="12" /></div>
+            </div>
+        </div><br>
+
+
+
+        <div class="col-md-8 mb-5">
+            <label class=" required form-label">Actif </label> <br>
+            <select required="required" style="width: 30%;">
+                <option selected>OUI</option>
+                <option>NON</option>
+            </select>
+        </div><br>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Activer les fees Internet
+            </label>
+        </div>
+
+        <div class="col-md-8 mb-5">
+            <label class="required" style="font-size: small;">Modifier le montant Fees(optional)</label>
+            <input type="textarea" class="form-control" placeholder="Fees"><br>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Pay Later
+            </label>
+        </div>
+        <div class="col-md-8 mb-5">
+            <label class=" required form-label">Pay Later Time Limit </label><br>
+            <select required="required" style="width: 30%;">
+                <option selected>24H</option>
+                <option>12H</option>
+                <option>6H</option>
+
+            </select>
+        </div><br>
+        <div class="col-md-8 mb-5">
+            <label class=" required form-label"> Min Temps avant Vol CC </label><br>
+            <select required="required" style="width: 30%;">
+                <option selected>24H</option>
+                <option>12H</option>
+                <option>6H</option>
+
+            </select>
+        </div><br>
+        <div class="col-md-8 mb-5">
+            <label class=" required form-label">Min Temps avant Vol Balance </label><br>
+            <select required="required" style="width: 30%;">
+                <option selected>24H</option>
+                <option>12H</option>
+                <option>6H</option>
+
+            </select>
+        </div><br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Timbre Facture
+            </label>
+        </div> -->
+
+        <div class="col-md-8 mb-5 text-center">
+
+            <button type="submit" class="btn btn-primary btn-lg">Ajouter</button>
+        </div>
+    </form>
+</div>

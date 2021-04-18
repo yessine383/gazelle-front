@@ -15,6 +15,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'user', component: UserComponent },
     { path: 'comptes', loadChildren: () => import('../../pages/comptes/comptes.module').then(m => m.ComptesModule) },
+    { path: 'contracts', loadChildren: () => import('../../pages/contracts/contracts.module').then(m => m.ContractsModule) },
     { path: 'typography', component: TypographyComponent },
     { path: 'icons', component: IconsComponent },
     { path: 'maps', component: MapsComponent },

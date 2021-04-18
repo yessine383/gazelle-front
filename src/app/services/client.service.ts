@@ -24,4 +24,8 @@ export class ClientService {
   updateClient(id: number, data) {
     return this.http.put("http://localhost:8000/api/comptes/" + id, data);
   }
+
+  deleteClient(id: number) {
+    return this.http.delete("http://localhost:8000/api/comptes/" + id);
+  }
 }

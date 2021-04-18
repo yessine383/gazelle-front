@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { NgbModal, NgbModalOptions, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ClientService } from 'app/services/client.service';
 import { ContratService } from 'app/services/contrat.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-comptes-list',
@@ -26,10 +27,15 @@ export class ListComponent implements OnInit {
     private modalService: NgbModal,
     private contratService: ContratService,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
   }
   ngOnInit() {
+    this.getClients();
+  }
+
+  getClients() {
     this.clientservice.getAllClients().subscribe(data => {
       this.clientList = data["hydra:member"];
       console.log(this.clientList)
@@ -67,6 +73,17 @@ export class ListComponent implements OnInit {
   redirectToAddClient() {
     this.router.navigateByUrl("/comptes/add")
 
+  }
+
+  deleteCompte(id) {
+    this.clientservice
+      .deleteClient(id).subscribe(
+        (data) => {
+          console.log(data)
+          this.getClients();
+          this.toastr.success('Compte supprimé avec succès');
+        },
+        (error) => { console.log(error) });
   }
 
 }

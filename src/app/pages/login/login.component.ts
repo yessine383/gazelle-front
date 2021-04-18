@@ -28,11 +28,12 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.authService.login(this.form).subscribe(
       data => {
+        console.log(data);
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
 
         this.isLoginFailed = false;
-        this.isLoggedIn = true;
+        // this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         // this.reloadPage();
         window.location.assign('http://localhost:4200/dashboard')

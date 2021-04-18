@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ClientService } from 'app/services/client.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit',
@@ -17,7 +18,8 @@ export class EditComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private clientservice: ClientService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -39,7 +41,7 @@ export class EditComponent implements OnInit {
       proprietaire: [''],
       responsable: [''],
       adresse: [''],
-      tel: [''],
+      // tel: [''],
       //fax: [''],
       actif: [''],
       //url: [''],
@@ -72,7 +74,7 @@ export class EditComponent implements OnInit {
           proprietaire,
           responsable,
           adresse,
-          tel: telephone[0],
+          // tel: telephone[0],
           actif
         });
       }
@@ -84,8 +86,13 @@ export class EditComponent implements OnInit {
       return;
     }
     const data = this.form.value;
-    console.log(data);
+    const actif = data['actif'];
+    delete data['actif'];
+    data['actif'] = actif === "false" ? false : true;
     this.clientservice.updateClient(this.compteId, data).subscribe((data) => {
+      if (data) {
+        this.toastr.success("Compte modifié avec succès");
+      }
       console.log('data', data)
     });
   }
