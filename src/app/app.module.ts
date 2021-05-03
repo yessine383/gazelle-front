@@ -20,15 +20,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { FormContratComponent } from './pages/form-contrat/form-contrat.component';
 import { AuthGuard } from './helpers/auth.guard';
-
+import { UsersComponent } from './pages/users/users.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AdminLayoutComponent,
-    LoginComponent,
-    FormContratComponent
-  ],
+  declarations: [AppComponent, AdminLayoutComponent, LoginComponent, FormContratComponent, UsersComponent],
   imports: [
     HttpClientModule,
     BrowserAnimationsModule,
@@ -38,10 +33,10 @@ import { AuthGuard } from './helpers/auth.guard';
     ToastrModule.forRoot(),
     FooterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [RouterModule],
   providers: [ClientService, authInterceptorProviders, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

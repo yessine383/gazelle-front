@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const API_URL = 'http://localhost:8000/api';
+const api = './assets/users.json';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class UserService {
 
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
+  }
+
+  getListUserByAgence(id:String){
+     return this.http.get<any>(`${api}`, { responseType: 'json' });
   }
 }

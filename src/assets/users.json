@@ -1,0 +1,36 @@
+[{
+        "id": "608b717dfbdf2009c7fda1d9",
+        "email": "rocha@gmail.com",
+        "password": "Mack",
+        "role": "user",
+        "agenceId": "1"
+    },
+    {
+        "id": "608b717d72da5a8948c02423",
+        "email": "Rocha",
+        "password": "Mack",
+        "role": "admin",
+        "agenceId": "1"
+    },
+    {
+        "id": "608b717d9abca00b762d458c",
+        "email": "Rocha",
+        "password": "Mack",
+        "role": "user",
+        "agenceId": "2"
+    },
+    {
+        "id": "608b717d0951638071c94592",
+        "email": "Rocha",
+        "password": "Mack",
+        "role": "user",
+        "agenceId": "2"
+    },
+    {
+        "id": "608b717d0951638071c94592",
+        "email": "Rocha",
+        "password": "Mack",
+        "role": "admin",
+        "agenceId": "3"
+    }
+]
