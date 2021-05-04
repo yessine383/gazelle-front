@@ -20,10 +20,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { FormContratComponent } from './pages/form-contrat/form-contrat.component';
 import { AuthGuard } from './helpers/auth.guard';
-import { UsersComponent } from './pages/users/users.component';
+import { UserFormComponent } from './pages/user/user-form/user-form.component';
 
 @NgModule({
-  declarations: [AppComponent, AdminLayoutComponent, LoginComponent, FormContratComponent, UsersComponent],
+  declarations: [AppComponent, AdminLayoutComponent, LoginComponent, FormContratComponent, UserFormComponent],
   imports: [
     HttpClientModule,
     BrowserAnimationsModule,

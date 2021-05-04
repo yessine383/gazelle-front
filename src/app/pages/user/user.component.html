@@ -224,8 +224,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header header-style">
                             <h4 class="card-title"> Liste des utilisateurs</h4>
+                            <a (click)="openAddForm()">
+                                <i class="fa fa-2x fa-plus-circle plus-icon" aria-hidden="true"></i>
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -241,12 +244,17 @@
                                         <tr *ngFor="let user of users; let i=index">
                                             <td> {{user.email}} </td>
                                             <td>
-                                                <input [id]="'input-pass-'+i" class="password-style" type="password" value="user.password">
-                                                <input [id]="'input-mask-'+i" class="hidden" type="text" value="user.password">
-                                                <a [id]="'pass-'+i" (click)="togglePassword(i)"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a [id]="'mask-'+i" (click)="togglePassword(i)"><i class="fa fa-eye-slash hidden" aria-hidden="true"></i></a>
+                                                <div [id]="'input-pass-'+i">
+                                                    <input class="password-style" type="password" value="user.password">
+                                                    <a (click)="togglePassword(i)"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                </div>
+                                                <div class="hidden" [id]="'input-mask-'+i">
+                                                    <input type="text" value="user.password">
+                                                    <a (click)="togglePassword(i)"><i class="fa fa-eye-slash hidden" aria-hidden="true"></i></a>
+                                                </div>
+
                                             </td>
-                                            <td> {{user.role}}</td>
+                                            <td> {{user.roles[0]}}</td>
                                             <td> {{user.agenceId}} </td>
                                             <th class="operations-style">
                                                 <div class="mr-2">
