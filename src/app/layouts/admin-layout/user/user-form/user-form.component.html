@@ -1,0 +1,101 @@
+<div class="icon-close close-style" (click)="activeModal.close()" aria-label="Close">
+</div>
+
+<div class="row">
+    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+        <div class="card card-user card-style">
+            <div class="card-header">
+                <h5 *ngIf="user == undefined" class="card-title">Ajouter utilisateur</h5>
+                <h5 *ngIf="user" class="card-title">Modifier utilisateur</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="userForm" class="ng-untouched ng-pristine ng-valid" (submit)="submit()">
+                    <div class="row">
+                        <div class="col-md-6 pr-1">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"> Addresse mail</label>
+                                <input formControlName="email" class="form-control" placeholder="Email" type="email">
+                            </div>
+                            <span class="invalid-feedback d-block" *ngIf="userForm.get('email').hasError('required') && userForm.submitted">
+                                <span class="error-box" >
+                                    Ce champs est requis
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 pr-1">
+                            <div class="form-group">
+                                <label> Mot de passe</label>
+                                <input formControlName="password" class="form-control" placeholder="mot de passe" type="password">
+                                <span class="invalid-feedback d-block">
+                                <span class="error-box" *ngIf="userForm.get('password').hasError('required') && userForm.submitted">
+                                    Ce champs est requis
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 pl-1">
+                            <div class="form-group">
+                                <label>Confirmation mot de passe</label>
+                                <input formControlName="confirmPassword" class="form-control" placeholder="confirme mot de passe" type="password">
+                                <span class="invalid-feedback d-block">
+                                <span class="error-box" *ngIf="userForm.get('confirmPassword').hasError('required') && userForm.get('confirmPassword').touched">
+                                    Ce champs est requis
+                                </span>
+                                <span class="error-box" *ngIf="userForm.get('confirmPassword').hasError('passwordMismatch')"> <!-- a verifier -->
+                                   mot de passe ne correspond pas 
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6 ">
+                            <div class="form-group ">
+                                <label>Agence</label>
+                                <select formControlName="agency" class="form-control">
+                                    <option value="1">Agence 1 </option>
+                                    <option value="2">Agence 2 </option>
+                                    <option value="3">Agence 3 </option>
+                                </select>
+                                <span class="invalid-feedback d-block">
+                                <span class="error-box" *ngIf="userForm.get('agency').hasError('required') && userForm.submitted">
+                                    Ce champs est requis
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 ">
+                            <div class="form-group ">
+                                <label>Role</label>
+                                <select formControlName="role" class="form-control">
+                                    <option value="ADMIN"> Administrateur </option>
+                                    <option value="SUPER_USER"> Super Utilisateur </option>
+                                    <option value="SIMPLE_USER"> Utilisateur </option>
+                                </select>
+                                <span class="invalid-feedback d-block">
+                                <span class="error-box" *ngIf="userForm.get('role').hasError('required') && userForm.submitted">
+                                    Ce champs est requis
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row ">
+                        <div class="col-md-12 ">
+                            <div class="form-group "><label>About Me</label><textarea class="form-control textarea ">Oh so, your weak rhyme You doubt I'll bother, reading into it</textarea></div>
+                        </div>
+                  </div> -->
+                    <div class="row ">
+                        <div class="update ml-auto mr-auto ">
+                            <button *ngIf="user == undefined" class="btn btn-primary btn-round " type="submit ">Ajouter</button>
+                            <button *ngIf="user" class="btn btn-primary btn-round " type="submit ">Editer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
