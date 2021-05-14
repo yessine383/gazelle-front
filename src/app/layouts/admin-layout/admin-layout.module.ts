@@ -9,12 +9,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TypographyComponent } from '../../pages/typography/typography.component';
 import { IconsComponent } from '../../pages/icons/icons.component';
 import { MapsComponent } from '../../pages/maps/maps.component';
-import { NotificationsComponent } from '../../pages/notifications/notifications.component';
 import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UserModule } from './user/user.module';
 import { SharedModule } from '../../shared/shared.module';
+import { ComptesModule } from './comptes/comptes.module';
+import { NotificationModule } from './notification/notification.module';
 
 @NgModule({
   imports: [
@@ -23,8 +22,9 @@ import { SharedModule } from '../../shared/shared.module';
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
-    UserModule,
-    SharedModule
+    SharedModule,
+    ComptesModule,
+    NotificationModule
   ],
   declarations: [
     DashboardComponent,
@@ -32,8 +32,6 @@ import { SharedModule } from '../../shared/shared.module';
     TypographyComponent,
     IconsComponent,
     MapsComponent,
-    NotificationsComponent,
-
   ]
 })
 

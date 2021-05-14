@@ -22,10 +22,10 @@ import { SharedModule } from "./shared/shared.module";
     ToastrModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [RouterModule],
-  providers: [ClientService, authInterceptorProviders, AuthGuard],
+  providers: [ClientService, AuthGuard], //authInterceptorProviders
   bootstrap: [AppComponent],
 })
 export class AppModule {}

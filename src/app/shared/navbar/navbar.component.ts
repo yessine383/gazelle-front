@@ -16,8 +16,8 @@ export class NavbarComponent implements OnInit {
   private nativeElement: Node;
   private toggleButton;
   private sidebarVisible: boolean;
-
   public isCollapsed = true;
+  public notifications: any[] = ['Agence 1 : Alimentation','Agence 2: Transaction','Agence 3: Transaction'];
   @ViewChild("navbar-cmp", { static: false }) button;
 
   constructor(location: Location, private renderer: Renderer2, private element: ElementRef, private router: Router, private tokenService: TokenStorageService) {
@@ -28,19 +28,20 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
-    var navbar: HTMLElement = this.element.nativeElement;
+    let navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
     this.router.events.subscribe((event) => {
       this.sidebarClose();
     });
   }
   getTitle() {
-    var titlee = this.location.prepareExternalUrl(this.location.path());
-    if (titlee.charAt(0) === '#') {
-      titlee = titlee.slice(1);
-    }
+    let path = this.location.prepareExternalUrl(this.location.path());
+    let path_ = path.slice(0,26);
+    let title = path.slice(13, 26);
+    
     for (var item = 0; item < this.listTitles.length; item++) {
-      if (this.listTitles[item].path === titlee) {
+      if (this.listTitles[item].path === path_) {
+        console.log(this.listTitles[item].title);
         return this.listTitles[item].title;
       }
     }
