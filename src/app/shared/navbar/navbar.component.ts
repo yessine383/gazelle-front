@@ -7,9 +7,9 @@ import { TokenStorageService } from 'app/services/token-storage.service';
 @Component({
   moduleId: module.id,
   selector: 'navbar-cmp',
-  templateUrl: 'navbar.component.html'
+  templateUrl: 'navbar.component.html',
+  styleUrls: ['navbar.component.css'],
 })
-
 export class NavbarComponent implements OnInit {
   private listTitles: any[];
   location: Location;
@@ -17,10 +17,16 @@ export class NavbarComponent implements OnInit {
   private toggleButton;
   private sidebarVisible: boolean;
   public isCollapsed = true;
-  public notifications: any[] = ['Agence 1 : Alimentation','Agence 2: Transaction','Agence 3: Transaction'];
-  @ViewChild("navbar-cmp", { static: false }) button;
+  public notifications: any[] = ['Agence 1 : Alimentation', 'Agence 2: Transaction', 'Agence 3: Transaction'];
+  @ViewChild('navbar-cmp', { static: false }) button;
 
-  constructor(location: Location, private renderer: Renderer2, private element: ElementRef, private router: Router, private tokenService: TokenStorageService) {
+  constructor(
+    location: Location,
+    private renderer: Renderer2,
+    private element: ElementRef,
+    private router: Router,
+    private tokenService: TokenStorageService
+  ) {
     this.location = location;
     this.nativeElement = element.nativeElement;
     this.sidebarVisible = false;
@@ -30,15 +36,15 @@ export class NavbarComponent implements OnInit {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
     let navbar: HTMLElement = this.element.nativeElement;
     this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
-    this.router.events.subscribe((event) => {
+    this.router.events.subscribe(event => {
       this.sidebarClose();
     });
   }
   getTitle() {
     let path = this.location.prepareExternalUrl(this.location.path());
-    let path_ = path.slice(0,26);
+    let path_ = path.slice(0, 26);
     let title = path.slice(13, 26);
-    
+
     for (var item = 0; item < this.listTitles.length; item++) {
       if (this.listTitles[item].path === path_) {
         console.log(this.listTitles[item].title);
@@ -67,7 +73,7 @@ export class NavbarComponent implements OnInit {
       mainPanel.style.position = 'fixed';
     }
     this.sidebarVisible = true;
-  };
+  }
   sidebarClose() {
     const html = document.getElementsByTagName('html')[0];
     const mainPanel = <HTMLElement>document.getElementsByClassName('main-panel')[0];
@@ -79,7 +85,7 @@ export class NavbarComponent implements OnInit {
     this.toggleButton.classList.remove('toggled');
     this.sidebarVisible = false;
     html.classList.remove('nav-open');
-  };
+  }
   collapse() {
     this.isCollapsed = !this.isCollapsed;
     const navbar = document.getElementsByTagName('nav')[0];
@@ -91,13 +97,15 @@ export class NavbarComponent implements OnInit {
       navbar.classList.add('navbar-transparent');
       navbar.classList.remove('bg-white');
     }
-
-
   }
-
 
   logout() {
     this.tokenService.signOut();
-    this.router.navigateByUrl("/login");
+    this.router.navigateByUrl('/login');
+  }
+  /**    methods for template          */
+  public seenNotif(event){
+    console.log('event: ',event);
+    
   }
 }

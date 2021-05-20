@@ -10,10 +10,28 @@
     </a>
     </div>
     <ul class="nav">
-        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
-            <a [routerLink]="[menuItem.path]">
-                <i class="nc-icon {{menuItem.icon}}"></i>
-                <p>{{menuItem.title}}</p>
+        <li class="" routerLinkActive="active">
+            <a routerLink="/panel-admin/dashboard">
+                <i class="nc-icon nc-bank"></i>
+                <p>Dashboard</p>
+            </a>
+        </li>
+        <li routerLinkActive="active" class="">
+            <a routerLink="/panel-admin/comptes">
+                <i class="nc-icon nc-tile-56"></i>
+                <p>Compte B2B</p>
+            </a>
+        </li>
+        <li routerLinkActive="active" class="">
+            <a routerLink="/panel-admin/users">
+                <i class="nc-icon nc-single-02"></i>
+                <p>Utilisateurs</p>
+            </a>
+        </li>
+        <li routerLinkActive="active" class="">
+            <a routerLink="/panel-admin/notification">
+                <i class="nc-icon nc-bell-55"></i>
+                <p>Notification</p>
             </a>
         </li>
     </ul>

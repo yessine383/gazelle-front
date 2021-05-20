@@ -23,11 +23,11 @@
                                 <td> {{user.email}} </td>
                                 <td>
                                     <div [id]="'input-pass-'+i">
-                                        <input class="password-style" type="password" value="{{user.password}}">
+                                        <input class="password-style" type="password" value="{{user.password}}" disabled>
                                         <a (click)="togglePassword(i)"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
                                     </div>
                                     <div class="password-style hidden" [id]="'input-mask-'+i">
-                                        <input class="password-style" type="text" value="{{user.password}}">
+                                        <input class="password-style" type="text" value="{{user.password}}" disabled>
                                         <a (click)="togglePassword(i)"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                     </div>
 
