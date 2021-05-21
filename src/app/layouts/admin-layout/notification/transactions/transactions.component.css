@@ -1,0 +1,9 @@
+.style-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.style-container-fluid {
+    background-color: #ffff;
+    padding-top: 30px;
+}

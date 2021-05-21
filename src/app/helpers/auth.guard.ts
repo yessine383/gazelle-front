@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class AuthGuard implements CanActivate {
   constructor(private tokenStorage: TokenStorageService, private router: Router, private service: AuthService) {}
 
- /*  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (this.tokenStorage.getToken()) {
       return true;
     } else {
@@ -21,9 +21,9 @@ export class AuthGuard implements CanActivate {
       window.alert('Se connecter pls');
       return false;
     }
-  } */
+  }
 
-   canActivate(
+   /* canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -40,5 +40,5 @@ export class AuthGuard implements CanActivate {
     }
     this.router.navigateByUrl('/users');
     return false;
-  }
+  } */
 }

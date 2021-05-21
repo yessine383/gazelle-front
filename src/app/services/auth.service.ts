@@ -29,49 +29,46 @@ export interface Payload {
   providedIn: 'root',
 })
 export class AuthService {
-  //isLoggedIn: boolean = false;
+  isLoggedIn: boolean = false;
   // store the URL so we can redirect after logging in
   public redirectUrl: string;
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(credentials): Observable<any> {
-    /* return this.http.post(
-      AUTH_API,
-      {
-        username: credentials.username,
-        password: credentials.password,
-      },
-      httpOptions
-    );
+   login(credentials): Observable<any> {
     this.isLoggedIn = true;
     if (this.redirectUrl) {
       this.router.navigate([this.redirectUrl]);
       this.redirectUrl = null;
-    } */
-    return this.http.post(AUTH_API, { username: credentials.username, password: credentials.password }, httpOptions).pipe(
+    }
+    return this.http.post(AUTH_API, {
+      username: credentials.username,
+      password: credentials.password
+    }, httpOptions);
+    
+  }
+    /* return this.http.post(AUTH_API, { username: credentials.username, password: credentials.password }, httpOptions).pipe(
       tap(res => this.setSession(res)),
       shareReplay(),
       catchError(error => {
         if (error.status === 404) {
           console.log('Not Found');
-          //this.toastService.error('Username or Password incorrect !!');
+          this.toastService.error('Username or Password incorrect !!');
         }
         throw error;
       })
-    );
+    ); */
   }
 
-  private setSession(authResult) {
+  /* private setSession(authResult) {
     const expiresAt = moment().add(authResult.expiresIn.valueInMillis, 'Millisecond');
     localStorage.setItem('token', authResult.tokenValue);
     localStorage.setItem('id_token', authResult.idToken);
     console.log('id token: ', authResult.idToken);
     localStorage.setItem('expires_at', JSON.stringify(expiresAt));
   }
-
-  logout(): any {
-    // remove user from local storage to log user out
+ */
+  /* logout(): any {
     localStorage.clear();
   }
   public isLoggedIn() {
@@ -80,9 +77,9 @@ export class AuthService {
 
   isLoggedOut() {
     return !this.isLoggedIn();
-  }
+  } */
 
-  getExpiration() {
+  /* getExpiration() {
     const expiration = localStorage.getItem('expires_at');
     const expiresAt = JSON.parse(expiration);
     return moment(expiresAt);
@@ -102,8 +99,8 @@ export class AuthService {
     } catch (error) {
       return null;
     }
-  }
-}
+  } 
+}*/
 
 
 

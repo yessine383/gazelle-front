@@ -25,7 +25,7 @@ import { SharedModule } from "./shared/shared.module";
     SharedModule,
   ],
   exports: [RouterModule],
-  providers: [ClientService, AuthGuard], //authInterceptorProviders
+  providers: [ClientService, AuthGuard, authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
