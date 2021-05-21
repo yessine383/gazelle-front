@@ -2,7 +2,7 @@
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-        <h1 style="color: orange;">Créer compte client</h1>
+        <h1 style="color: orange;">Modifier un compte Client</h1>
         <div class="col-md-8 mb-5">
             <label class=" required form-label" style="font-size: small;">Type</label>
             <select class="form-control" required formControlName="type" name="type">
@@ -14,8 +14,7 @@
 
         <div class="col-md-8 mb-5">
             <label class="required" style="font-size: small;"> Office ID </label>
-            <input type="number" class="form-control" formControlName="officeId" required placeholder="Office ID"
-                maxlength="100">
+            <input type="number" class="form-control" formControlName="officeId" required placeholder="Office ID" maxlength="100">
         </div>
 
         <div class="col-md-8 mb-5">
@@ -31,20 +30,17 @@
 
         <div class="col-md-8 mb-5">
             <label class="required" style="font-size: small;">Nom Organisme*</label>
-            <input type="text" class="form-control" name="organisme" required formControlName="organisme"
-                maxlength="100" placeholder="NOM">
+            <input type="text" class="form-control" name="organisme" required formControlName="organisme" maxlength="100" placeholder="NOM">
         </div>
 
         <div class="col-md-8 mb-5">
             <label class="required" style="font-size: small;">Matricule fiscal*</label>
-            <input type="text" class="form-control" name="matricule" required formControlName="matricule"
-                placeholder="MATRICULE" maxlength="100">
+            <input type="text" class="form-control" name="matricule" required formControlName="matricule" placeholder="MATRICULE" maxlength="100">
         </div>
 
         <div class="col-md-8 mb-5">
             <label class="required" style="font-size: small;"> Propriétaire </label>
-            <input type="text" class="form-control" formControlName="proprietaire" name="proprietaire"
-                required="required" placeholder="PROPRIETAIRE" maxlength="100">
+            <input type="text" class="form-control" formControlName="proprietaire" name="proprietaire" required="required" placeholder="PROPRIETAIRE" maxlength="100">
         </div>
 
         <!-- <div class="col-md-8 mb-5">

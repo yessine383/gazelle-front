@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getUser().roles;
-      window.location.assign('http://localhost:4200/panel-admin/dashboard')
+      window.location.assign('http://localhost:4200/panel-admin/statistique')
 
     }
   }
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
         // this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         // this.reloadPage();
-        window.location.assign('http://localhost:4200/panel-admin/dashboard')
+        window.location.assign('http://localhost:4200/panel-admin/statistique')
       },
       err => {
         this.errorMessage = err.error.message;

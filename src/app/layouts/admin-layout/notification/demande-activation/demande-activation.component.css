@@ -1,0 +1,21 @@
+.check {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    margin-top: -13px;
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    color: inherit;
+    opacity: 0.9;
+    text-shadow: none;
+    line-height: 0;
+    outline: 0;
+    background-color: transparent;
+    border: 0;
+    appearance: none;
+}
+
+.check:hover {
+    color: black;
+}

@@ -32,7 +32,10 @@
                                     </div>
 
                                 </td>
-                                <td> {{user.roles[0]}}</td>
+                                <td *ngIf="user.roles[0] == 'SIMPLE_USER'"> Simple utilisateur</td>
+                                <td *ngIf="user.roles[0] == ''"> Simple utilisateur</td>
+                                <td *ngIf="user.roles[0] == 'SIMPLE_USER'"> Simple utilisateur</td>
+
                                 <td> {{user.agenceId}} </td>
                                 <th class="operations-style">
                                     <div class="mr-2">

@@ -42,8 +42,8 @@ export class NavbarComponent implements OnInit {
   }
   getTitle() {
     let path = this.location.prepareExternalUrl(this.location.path());
-    let path_ = path.slice(0, 26);
-    let title = path.slice(13, 26);
+    let index = path.indexOf('/list');
+    let path_ = path.slice(0, index);
 
     for (var item = 0; item < this.listTitles.length; item++) {
       if (this.listTitles[item].path === path_) {

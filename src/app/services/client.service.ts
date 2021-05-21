@@ -2,30 +2,32 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClientService {
-
-  constructor(private http: HttpClient) {
-  }
+  private url: string = 'http://localhost:8000/api/comptes';
+  constructor(private http: HttpClient) {}
 
   getAllClients() {
-    return this.http.get("http://localhost:8000/api/comptes");
+    return this.http.get(`${this.url}`);
   }
 
   addClient(compte: any) {
-    return this.http.post("http://localhost:8000/api/comptes", compte);
+    return this.http.post(`${this.url}`, compte);
   }
 
   getClientsById(id: number) {
-    return this.http.get("http://localhost:8000/api/comptes/" + id);
+    return this.http.get(`${this.url}/${id}`);
   }
 
   updateClient(id: number, data) {
-    return this.http.put("http://localhost:8000/api/comptes/" + id, data);
+    return this.http.put(`${this.url}/${id}`, data);
   }
 
   deleteClient(id: number) {
-    return this.http.delete("http://localhost:8000/api/comptes/" + id);
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getListContrat(id: number) {
+    return this.http.get(`${this.url}/contrats/${id}`);
   }
 }
