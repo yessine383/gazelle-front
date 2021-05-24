@@ -5,22 +5,21 @@ import { NgbModal, NgbModalOptions, NgbModalRef } from '@ng-bootstrap/ng-bootstr
 import { ClientService } from 'app/services/client.service';
 import { ContratService } from 'app/services/contrat.service';
 import { ToastrService } from 'ngx-toastr';
+import { BalanceFormComponent } from '../balance-form/balance-form.component';
 
 @Component({
   selector: 'app-comptes-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
-
-  clientList: any
+  clientList: any;
   client: any;
-  clientById: any
+  clientById: any;
   contractApis: [];
   contractList: Array<any> = [];
   modalOption: NgbModalOptions = {};
   modalReference: NgbModalRef;
-
 
   constructor(
     private clientservice: ClientService,
@@ -29,61 +28,69 @@ export class ListComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private toastr: ToastrService
-  ) {
-  }
+  ) {}
   ngOnInit() {
     this.getClients();
   }
 
   getClients() {
     this.clientservice.getAllClients().subscribe(data => {
-      this.clientList = data["hydra:member"];
-      console.log(this.clientList)
-      console.log(data)
-    })
+      this.clientList = data['hydra:member'];
+      console.log(this.clientList);
+      console.log(data);
+    });
   }
 
   saveClient() {
-    this.clientservice.addClient(this.client).subscribe((data) => { console.log(data) }, (error) => { console.log(error) })
+    this.clientservice.addClient(this.client).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   getClientInfo(content, id) {
-    this.contractList = []
-    this.clientservice.getClientsById(id).subscribe((data) => {
-
-      this.clientById = data
-      this.contractApis = this.clientById["contrats"]
+    this.contractList = [];
+    this.clientservice.getClientsById(id).subscribe(data => {
+      this.clientById = data;
+      this.contractApis = this.clientById['contrats'];
       this.contractApis.forEach(element => {
-        this.http.get("http://localhost:8000" + element).subscribe(data => {
-
-          this.contractList.push(data)
-          console.log(this.contractList)
-
-        })
+        this.http.get('http://localhost:8000' + element).subscribe(data => {
+          this.contractList.push(data);
+          console.log(this.contractList);
+        });
       });
-
-    })
+    });
     this.modalOption.backdrop = 'static';
     this.modalOption.keyboard = false;
-    this.modalOption.size = "xl";
+    this.modalOption.size = 'xl';
     this.modalService.open(content, this.modalOption);
   }
 
-
   redirectToAddClient() {
-    this.router.navigateByUrl("/panel-admin/comptes/add")
-
+    this.router.navigateByUrl('/panel-admin/comptes/add');
   }
 
   deleteCompte(id) {
-    this.clientservice
-      .deleteClient(id).subscribe(
-        (data) => {
-          console.log(data)
-          this.getClients();
-          this.toastr.success('Compte supprimé avec succès');
-        },
-        (error) => { console.log(error) });
+    this.clientservice.deleteClient(id).subscribe(
+      data => {
+        console.log(data);
+        this.getClients();
+        this.toastr.success('Compte supprimé avec succès');
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
+  editCompte(){
+     this.modalService.open(BalanceFormComponent, {
+       size: 'lg',
+       backdrop: 'static',
+     });
+  }
 }

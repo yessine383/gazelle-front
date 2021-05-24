@@ -1,0 +1,18 @@
+.file-style {
+    height: 45px !important;
+    opacity: 1 !important;
+}
+
+.header-class {
+    top: -15px;
+}
+
+.close-style {
+    position: relative;
+    top: -6px;
+    left: 99%;
+}
+
+.filed-style {
+    width: 350px !important;
+}

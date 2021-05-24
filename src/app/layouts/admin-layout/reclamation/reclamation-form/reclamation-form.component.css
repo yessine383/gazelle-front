@@ -1,0 +1,13 @@
+.form-control.textarea {
+    max-height: 200px !important;
+}
+
+.close-style {
+    float: right;
+    padding: 10px 10px 10px 10px;
+}
+
+.card-style {
+    padding: 30px 10px 10px 10px;
+    border: none !important;
+}

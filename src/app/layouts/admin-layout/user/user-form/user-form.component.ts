@@ -26,14 +26,12 @@ export class UserFormComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.cd.detectChanges();
-    console.log('user from on change: ');
     if (this.user) {
       this.updateForm(this.user);
     }
   }
 
   ngOnInit(): void {
-    console.log('user: ', this.user);
      this.buildForm();
     if (this.user) {
       this.updateForm(this.user);

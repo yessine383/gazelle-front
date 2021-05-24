@@ -1,0 +1,130 @@
+<div class="row">
+    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 header-class">
+        <div class="card card-user card-style">
+            <div class="card-header d-flex">
+                <div class="icon-close close-style" (click)="activeModal.close()" aria-label="Close">
+                </div>
+                <h4 class="card-title">Alimentation Balance BO</h4>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="balanceForm" class="ng-untouched ng-pristine ng-valid" (submit)="submit()">
+                    <div class="row">
+                        <div class="form-group d-flex col-md-12">
+                            <div class="col-md-2 pr-1">
+                                <label for="clientId"> Client</label>
+                            </div>
+                            <div class="col-md-8 pr-1">
+                                <input formControlName="clientId" class="form-control ml-2 filed-style" placeholder="" type="text">
+                            </div>
+                            <span class="invalid-feedback d-block" *ngIf="balanceForm.get('clientId').hasError('required') && balanceForm.submitted">
+                                <span class="error-box" >
+                                    Ce champs est requis
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex col-md-12">
+                            <div class="col-md-2 pr-1">
+                                <label> Solde</label>
+                            </div>
+                            <div class="col-md-8 pr-1">
+                                <input formControlName="solde" class="form-control filed-style" placeholder="Solde" type="number">
+                            </div>
+                            <span class="invalid-feedback d-block">
+                                    <span class="error-box" *ngIf="balanceForm.get('solde').hasError('required') && balanceForm.submitted">
+                                        Ce champs est requis
+                                    </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex col-md-12">
+                            <div class="col-md-2 pr-1">
+                                <label>Nº Bulletin de versement (*)</label>
+                            </div>
+                            <div class="col-md-8 pl-1">
+                                <input formControlName="numBulletin" class="form-control filed-style" placeholder="" type="text">
+                            </div>
+                        </div>
+                        <span class="invalid-feedback d-block">
+                        <span class="error-box" *ngIf="balanceForm.get('numBulletin').hasError('required') && balanceForm.submitted">
+                            Ce champs est requis
+                        </span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex col-md-12">
+                            <div class="col-md-2 pr-1">
+                                <label>Date de bulletin (*)</label>
+                            </div>
+                            <div class="col-md-8 pl-1">
+                                <input formControlName="date" class="form-control filed-style" placeholder="DD/MM/YYYY" type="date">
+                            </div>
+                        </div>
+                        <span class="invalid-feedback d-block">
+                                <span class="error-box" *ngIf="balanceForm.get('date').hasError('required') && balanceForm.submitted">
+                                    Ce champs est requis
+                                </span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex col-md-12">
+                            <div class="col-md-2 pr-1">
+                                <label>Upload Bulletin (*)</label>
+                            </div>
+                            <div class="col-md-8 pl-1">
+                                <input formControlName="file" class="form-control file-style filed-style" placeholder="DD/MM/YYYY" type="file">
+                            </div>
+                        </div>
+                        <span class="invalid-feedback d-block">
+                    <span class="error-box" *ngIf="balanceForm.get('file').hasError('required') && balanceForm.submitted">
+                        Ce champs est requis
+                    </span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex col-md-12">
+                            <div class="col-md-2 pr-1">
+                                <label>Montant a ajouter (*)</label>
+                            </div>
+                            <div class="col-md-8 pl-1">
+                                <input formControlName="montant" class="form-control filed-style" placeholder="" type="number">
+                            </div>
+                        </div>
+                        <span class="invalid-feedback d-block">
+                    <span class="error-box" *ngIf="balanceForm.get('montant').hasError('required') && balanceForm.submitted">
+                        Ce champs est requis
+                    </span>
+                        </span>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex col-md-12">
+                            <div class="col-md-2 pr-1">
+                                <label> Description </label>
+                            </div>
+                            <div class="col-md-8 pl-1">
+                                <input formControlName="description" class="form-control filed-style" placeholder="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex col-md-12">
+                            <div class="col-md-2 pr-1">
+                                <label> Validateur: 10+18 </label>
+                            </div>
+                            <div class="col-md-8 pl-1">
+                                <input formControlName="validateur" class="form-control filed-style" placeholder="" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="update ml-auto mr-auto ">
+                            <button class="btn btn-primary btn-round " type="submit ">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

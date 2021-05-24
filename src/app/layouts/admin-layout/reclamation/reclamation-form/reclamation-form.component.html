@@ -1,0 +1,59 @@
+<div class="icon-close close-style" (click)="activeModal.close()" aria-label="Close">
+</div>
+
+<div class="row">
+    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+        <div class="card card-user card-style">
+            <div class="card-header">
+                <h5 class="card-title">Ajouter Recalamtion</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="reclamationForm" class="ng-untouched ng-pristine ng-valid" (submit)="submit()">
+                    <div class="row ">
+                        <!--  <div class="col-md-3"></div> -->
+                        <div class="col-md-12">
+                            <div class="form-group ">
+                                <label>Type de Recalamtion</label>
+                                <ng-select [items]="types" formControlName="type"></ng-select>
+                                <span class="invalid-feedback d-block">
+                            <!--  <span class="error-box" *ngIf="reclamationForm.get('agency').hasError('required') && reclamationForm.submitted">
+                                Ce champs est requis
+                            </span> -->
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-md-3"></div> -->
+                        <div class="col-md-12 pr-1">
+                            <div class="form-group">
+                                <label for="objet"> Objet (*)</label>
+                                <input formControlName="objet" class="form-control" placeholder="" type="text">
+                            </div>
+                            <span class="invalid-feedback d-block" *ngIf="reclamationForm.get('objet').hasError('required') && reclamationForm.submitted">
+                                <span class="error-box" >
+                                    Ce champs est requis
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label for="objet"> Description</label>
+                            <textarea rows="10" cols="100" formControlName="description" class="form-control textarea" placeholder="Expliquer Votre Recalamtion detaillee dans ce champs" type="text"> </textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label for="file">Piece jointe</label>
+                        <input formControlName="file" class="form-control" placeholder="" type="file">
+                    </div>
+                    <div class="row ">
+                        <div class="update ml-auto mr-auto ">
+                            <button class="btn btn-primary btn-round " type="submit ">Ajouter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
