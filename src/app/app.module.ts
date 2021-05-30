@@ -13,6 +13,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { FormContratComponent } from './pages/form-contrat/form-contrat.component';
 import { AuthGuard } from './helpers/auth.guard';
 import { SharedModule } from "./shared/shared.module";
+import { LayoutModule } from './layouts/layout/layout.module';
 @NgModule({
   declarations: [AppComponent, AdminLayoutComponent, LoginComponent, FormContratComponent],
   imports: [
@@ -23,6 +24,7 @@ import { SharedModule } from "./shared/shared.module";
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    LayoutModule
   ],
   exports: [RouterModule],
   providers: [ClientService, AuthGuard, authInterceptorProviders],

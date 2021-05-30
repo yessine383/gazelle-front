@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-0" style="background-color: #F78536;">
+            <img class="cover-style" src="../../../../../assets/images/DSC_1963-1.jpeg" alt="">
+
+            <div class=" col-sm-5 col-md-5 " data-stellar-background-ratio="0.5 ">
+                <div class="tabulation ">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs " role="tablist ">
+                        <li role="presentation " class="active ">
+                            <a href="#flights " aria-controls="flights " role="tab " data-toggle="tab ">Vols</a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content ">
+                        <div role="tabpanel " class="tab-pane active ">
+                            <form [formGroup]="bookingForm" (submit)="submit()">
+                                <div class="row ">
+                                    <div class="col-xxs-12 col-xs-6 mt mr-5">
+                                        <div class="input-field ">
+                                            <label for="from ">De:</label>
+                                            <input type="text " class="form-control " formControlName="B_LOCATION_1" placeholder="Los Angeles, USA " />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxs-12 col-xs-6 mt ">
+                                        <div class="input-field ">
+                                            <label for="from ">A:</label>
+                                            <input type="text " class="form-control " formControlName="B_LOCATION_2" placeholder="Tokyo, Japan " />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxs-12 col-xs-6 mt" style="margin-right: 2rem !important;">
+                                        <div class="input-field ">
+                                            <label for="date-start ">Aller:</label>
+                                            <input type="date" class="form-control " formControlName="B_DATE_1" placeholder="mm/dd/yyyy " />
+                                        </div>
+                                    </div>
+                                    <div class="col-xxs-12 col-xs-6 mt  ">
+                                        <div class="input-field ">
+                                            <label for="date-end ">Retour:</label>
+                                            <input type="date" class="form-control " formControlName="B_DATE_2" placeholder="mm/dd/yyyy " />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-6 mt ">
+                                        <section>
+                                            <label for="class ">Adulte:</label>
+                                            <ng-select [items]="intervale" formControlName="ADTPAX"></ng-select>
+                                            <!-- formControlName="type"-->
+                                        </section>
+                                    </div>
+                                    <div class="col-md-12 col-xs-6 mt ">
+                                        <section>
+                                            <label for="class ">Enfant:</label>
+                                            <ng-select [items]="intervale" formControlName="ENFANTPAX"></ng-select>
+                                        </section>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 ">
+                                    <button type="submit" class="btn btn-primary btn-block">Rechercher</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

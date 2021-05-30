@@ -4,11 +4,11 @@ import { LoginComponent } from './pages/login/login.component';
 
 
 export const AppRoutes: Routes = [
-  {
+  /* {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full',
-  },
+  }, */
   { path: 'login', component: LoginComponent },
   {
     path: 'panel-admin',
@@ -20,6 +20,11 @@ export const AppRoutes: Routes = [
         //canActivate: [AuthGuard],
       },
     ],
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./layouts/layout/layout.module').then(m => m.LayoutModule),
+    //canActivate: [AuthGuard],
   },
 
   /*
