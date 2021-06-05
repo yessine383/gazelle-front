@@ -5,16 +5,22 @@
     <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
         <div class="card card-user card-style">
             <div class="card-header">
-                <h5 class="card-title">Ajouter Recalamtion</h5>
+                <h4 class="card-title">Ajouter Reclamation</h4>
             </div>
             <div class="card-body">
                 <form [formGroup]="reclamationForm" class="ng-untouched ng-pristine ng-valid" (submit)="submit()">
                     <div class="row ">
                         <!--  <div class="col-md-3"></div> -->
-                        <div class="col-md-12">
-                            <div class="form-group ">
+                        <div class="col-md-10">
+                            <div class="form-group d-grid">
                                 <label>Type de Recalamtion</label>
-                                <ng-select [items]="types" formControlName="type"></ng-select>
+                                <div class="col-md-10 p-0">
+                                    <select class="select-style" formControlName="type" (change)="chooseType($event)">
+                                        <option> Demande de remboursement </option>
+                                        <option> Vol retarde ou annule </option>
+                                        <option> Autres </option>
+                                    </select>
+                                </div>
                                 <span class="invalid-feedback d-block">
                             <!--  <span class="error-box" *ngIf="reclamationForm.get('agency').hasError('required') && reclamationForm.submitted">
                                 Ce champs est requis
@@ -25,7 +31,7 @@
                     </div>
                     <div class="row">
                         <!-- <div class="col-md-3"></div> -->
-                        <div class="col-md-12 pr-1">
+                        <div class="col-md-10 pr-1">
                             <div class="form-group">
                                 <label for="objet"> Objet (*)</label>
                                 <input formControlName="objet" class="form-control" placeholder="" type="text">
@@ -38,9 +44,12 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 form-group">
-                            <label for="objet"> Description</label>
-                            <textarea rows="10" cols="100" formControlName="description" class="form-control textarea" placeholder="Expliquer Votre Recalamtion detaillee dans ce champs" type="text"> </textarea>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label for="objet"> Description</label>
+                                <textarea rows="10" cols="100" formControlName="description" class="form-control textarea" placeholder="Expliquer Votre Recalamtion detaillee dans ce champs" type="text"> </textarea>
+
+                            </div>
                         </div>
                     </div>
                     <div class="row">

@@ -22,16 +22,19 @@ export class ReclamationFormComponent implements OnInit {
       type: new FormControl('', [Validators.required]),
       objet: new FormControl('', [Validators.required]),
       description: new FormControl(''),
-      file: new FormControl('')
+      file: new FormControl(''),
     });
   }
 
-  submit(){
-    if(this.reclamationForm.valid){
-      let reclamation: any ={};
+  submit() {
+    if (this.reclamationForm.valid) {
+      let reclamation: any = {};
       reclamation = this.reclamationForm.value;
-      console.log('reclamation: ',reclamation);
+      console.log('reclamation: ', reclamation);
     }
+  }
 
+  chooseType(e){
+    console.log('event: ', e);
   }
 }

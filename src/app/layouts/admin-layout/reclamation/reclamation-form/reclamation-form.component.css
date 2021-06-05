@@ -11,3 +11,11 @@
     padding: 30px 10px 10px 10px;
     border: none !important;
 }
+
+.select-style {
+    height: 35px;
+}
+
+.card-title {
+    font-weight: 800;
+}

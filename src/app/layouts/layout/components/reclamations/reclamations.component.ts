@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ReclamationFormComponent } from 'app/layouts/admin-layout/reclamation/reclamation-form/reclamation-form.component';
 import { UserService } from 'app/services/user.service';
 
 @Component({
@@ -8,11 +10,17 @@ import { UserService } from 'app/services/user.service';
 })
 export class ReclamationsComponent implements OnInit {
   reclamations: any = [];
-  constructor(private service: UserService) {}
+  constructor(private service: UserService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.getListReclamation();
-    
+  }
+
+  public openReclamationForm() {
+    this.modalService.open(ReclamationFormComponent, {
+      size: 'lg',
+      backdrop: 'static',
+    });
   }
 
   private getListReclamation() {

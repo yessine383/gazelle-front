@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'app/layouts/admin-layout/user/Model/User';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { Booking } from 'app/layouts/layout/Model/Booking.model';
 
 const API_URL = 'http://localhost:8000/api';
 const api = './assets/users.json';
@@ -24,6 +25,7 @@ const api = './assets/users.json';
 })
 export class UserService {
   public userList = new BehaviorSubject<any>('');
+  url = 'http://www.gazellepro.tunisair.com.tn/tun/FO2-DEV/APP/booking_api.php';
 
   constructor(private http: HttpClient) {}
 
@@ -52,5 +54,9 @@ export class UserService {
 
   public getListActualite() {
     return this.http.get(`${API_URL}/actualites`, { responseType: 'json' });
+  }
+
+  public searchForBooking(booking: Booking) {
+    return this.http.post(`${this.url}`, booking);
   }
 }
