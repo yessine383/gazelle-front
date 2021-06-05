@@ -40,6 +40,17 @@ export class UserService {
   }
 
   getListUserByAgence(id: String) {
-    return this.http.get<any>(`${api}`, { responseType: 'json' });
+    return this.http.get<any>(`${API_URL}/users`, { responseType: 'json' });
+  }
+  public getListTransaction() {
+    return this.http.get(`${API_URL}/transactions`, { responseType: 'json' });
+  }
+
+  public getListReclamation() {
+    return this.http.get(`${API_URL}/reclamations`, { responseType: 'json' });
+  }
+
+  public getListActualite() {
+    return this.http.get(`${API_URL}/actualites`, { responseType: 'json' });
   }
 }

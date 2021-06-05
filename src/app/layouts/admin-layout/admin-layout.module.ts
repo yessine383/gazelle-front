@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../../shared/shared.module';
 import { ComptesModule } from './comptes/comptes.module';
 import { NotificationModule } from './notification/notification.module';
+import { UserService } from '../../services/user.service';
 
 @NgModule({
   imports: [

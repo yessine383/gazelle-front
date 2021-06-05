@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div id="fh5co-tours" class="fh5co-section-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center heading-section ">
+                        <h3>Liste des transactions</h3>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    </div>
+                </div>
+                <div class="row container-list">
+                    <div *ngFor="let actualite of actualites" class="col-4">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{actualite.type}}</h5>
+                                <p class="card-text text-truncate">{{actualite.description}}</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

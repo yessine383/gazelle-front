@@ -25,7 +25,8 @@ export class UsersListComponent implements OnInit {
   private getListUserByAgence(id: String) {
     this.subscription.add(
       this.userService.getListUserByAgence(id).subscribe(users => {
-        this.users = users;
+        this.users = users['hydra:member'];
+        console.log(users['hydra:member'][0]);
       })
     );
   }

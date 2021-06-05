@@ -12,7 +12,7 @@
                     <table class="table">
                         <thead class=" text-primary">
                             <th> Email </th>
-                            <th> Mot de passe </th>
+                            <!--   <th> Mot de passe </th> -->
                             <th> Role </th>
                             <th> Agence </th>
                             <th class=""> </th>
@@ -21,7 +21,7 @@
                             <tr *ngFor="let user of users ;let i=index">
                                 <!-- | filter: searchText-->
                                 <td> {{user.email}} </td>
-                                <td>
+                                <!-- <td>
                                     <div [id]="'input-pass-'+i">
                                         <input class="password-style" type="password" value="{{user.password}}" disabled>
                                         <a (click)="togglePassword(i)"><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
@@ -31,10 +31,10 @@
                                         <a (click)="togglePassword(i)"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                     </div>
 
-                                </td>
-                                <td *ngIf="user.roles[0] == 'SIMPLE_USER'"> Simple utilisateur</td>
-                                <td *ngIf="user.roles[0] == ''"> Simple utilisateur</td>
-                                <td *ngIf="user.roles[0] == 'SIMPLE_USER'"> Simple utilisateur</td>
+                                </td> -->
+                                <td *ngIf="user.roles[0] == 'ROLE_USER'"> Simple utilisateur</td>
+                                <td *ngIf="user.roles[0] == 'ROLE_ADMIN'"> Administrateur</td>
+                                <!--   <td *ngIf="user.roles[0] == 'SIMPLE_USER'"> Simple utilisateur</td> -->
 
                                 <td> {{user.agenceId}} </td>
                                 <th class="operations-style">

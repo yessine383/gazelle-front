@@ -1,0 +1,6 @@
+@media(min-width: 1430px) {
+    .col-xl-2.container-list {
+        flex: 0 0 25%;
+        max-width: 20%;
+    }
+}

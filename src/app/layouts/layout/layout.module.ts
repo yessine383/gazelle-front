@@ -9,10 +9,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookingService } from './service/booking.service';
 import { ReclamationsComponent } from './components/reclamations/reclamations.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
+import { ActualitesComponent } from './components/actualites/actualites.component';
 
 
 @NgModule({
-  declarations: [LayoutComponent, HomeComponent, ReclamationsComponent, TransactionComponent],
+  declarations: [LayoutComponent, HomeComponent, ReclamationsComponent, TransactionComponent, ActualitesComponent],
   imports: [CommonModule, LayoutRoutingModule, NgSelectModule, FormsModule, ReactiveFormsModule],
   providers: [
     BookingService

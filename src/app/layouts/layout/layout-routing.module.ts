@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { HomeComponent } from './components/home/home.component';
-import { ReclamationComponent } from '../admin-layout/reclamation/reclamation.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
+import { ActualitesComponent } from './components/actualites/actualites.component';
+import { ReclamationsComponent } from './components/reclamations/reclamations.component';
 
 const routes: Routes = [
-   /* {
+  /* {
     path: '',
     redirectTo: '',
     pathMatch: 'full',
@@ -20,13 +21,17 @@ const routes: Routes = [
         component: HomeComponent,
       },
       {
-        path: 'recalamtions',
-        component: ReclamationComponent
+        path: 'reclamations',
+        component: ReclamationsComponent,
       },
       {
         path: 'transactions',
-        component: TransactionComponent
-      }
+        component: TransactionComponent,
+      },
+      {
+        path: 'actualites',
+        component: ActualitesComponent,
+      },
     ],
   },
 ];
