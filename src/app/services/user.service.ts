@@ -27,18 +27,18 @@ export class UserService {
   public userList = new BehaviorSubject<any>('');
   url = 'http://www.gazellepro.tunisair.com.tn/tun/FO2-DEV/APP/booking_api.php';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   addUser(user: User): Observable<User> {
-    return this.http.post<User>(`${api}/users`, user, { responseType: 'json' });
+    return this.http.post<User>(`${API_URL}/users`, user, { responseType: 'json' });
   }
 
   updateUser(user: User): Observable<User> {
-    return this.http.put<User>(`${api}/users`, user, { responseType: 'json' });
+    return this.http.put<User>(`${API_URL}/users`, user, { responseType: 'json' });
   }
 
   deleteUser(id: number): Observable<any> {
-    return this.http.delete<any>(`${api}/users/${id}`, { responseType: 'json' });
+    return this.http.delete<any>(`${API_URL}/users/${id}`, { responseType: 'json' });
   }
 
   getListUserByAgence(id: String) {

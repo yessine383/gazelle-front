@@ -22,7 +22,7 @@ export class UserFormComponent implements OnInit, OnChanges {
     private userService: UserService,
     private toastrService: ToastrService,
     private cd: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.cd.detectChanges();
@@ -32,11 +32,11 @@ export class UserFormComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-     this.buildForm();
+    this.buildForm();
     if (this.user) {
       this.updateForm(this.user);
     }
-   
+
   }
 
   private buildForm() {
@@ -59,19 +59,20 @@ export class UserFormComponent implements OnInit, OnChanges {
       agency: user.agenceId,
       role: user.roles[0]
     });
-    
+
   }
 
   submit() {
     if (this.userForm.valid) {
       let user = { ...this.userForm.value };
       delete user.confirmPassword;
-      if(this.user){
-        this.userService.updateUser(this.user).subscribe( user => {
-          this.userService.userList.next(user);
-        })
+      if (this.user) {
+        /*     this.userService.updateUser(this.user).subscribe( user => {
+              this.userService.userList.next(user);
+            }) */
+        console.log(user);
 
-      }else{
+      } else {
         this.userService.addUser(user).subscribe(
           user => {
             this.toastrService.success("Ajout d'un utilisateur avec succès");
@@ -83,7 +84,7 @@ export class UserFormComponent implements OnInit, OnChanges {
           }
         );
       }
-     
+
     }
   }
 

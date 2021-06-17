@@ -1,1 +1,150 @@
-<p>edit works!</p>
+<form #form class="user" method='POST' action='http://gazellePro.tunisair.com.tn/TUN/FO2-DEV/APP/Booking_API.php'>
+    <hr class="sidebar-divider">
+    <div class="form-group row">
+
+        <div class="col-sm-6">
+            <input class="rdb" id="allersimple" type="radio" autocomplete="off" value="O" name="TRIP_TYPE">
+            <label for="allersimple">Aller Simple</label>
+        </div>
+
+        <div class="col-sm-6">
+            <input class="rdb" id="allerretour" type="radio" autocomplete="off" value="R" name="TRIP_TYPE">
+            <label for="allerretour">Aller Retour</label>
+        </div>
+
+    </div>
+
+
+    <hr class="sidebar-divider">
+    <div class="row">
+        <div class="col-sm-6 m2">
+            <label for="examplegenre">De :</label>
+            <select name="B_LOCATION_1" class="form-control form-control-user" id="examplegenre">
+                <optgroup label="Tunisie">
+                    <option value="TUN">Tunis</option>
+                    <option value="Monastir">Monastir</option>
+                    <option value="Gafsa">Gafsa</option>
+                    <option value="Djerba">Djerba</option>
+                    <option value="Tabarka">Tabarka</option>
+                </optgroup>
+                <optgroup label="France">
+                    <option value="Bordeaux">Bordeaux</option>
+                    <option value="PAR">Paris</option>
+                    <option value="Dijon">Dijon</option>
+                    <option value="Grenoble">Grenoble</option>
+                </optgroup>
+                <optgroup label="Maroc">
+                    <option value="Casablanca">Casablanca</option>
+                    <option value="Menara">Menara</option>
+                    <option value="Al Massira">Al Massira</option>
+                    <option value="SaÃ¯ss">SaÃ¯ss</option>
+                    <option value="Ibn Batouta">Ibn Batouta</option>
+                </optgroup>
+                <optgroup label="BÃ©lgique">
+                    <option value="Bruxelles"> Bruxelles</option>
+                    <option value="Brussels South Charleroi">Brussels South Charleroi</option>
+                    <option value="LiÃ¨ge">LiÃ¨ge</option>
+                    <option value="Ostende-Bruges">Ostende-Bruges</option>
+                    <option value="Anvers">Anvers</option>
+                </optgroup>
+                <optgroup label="Allemagne">
+                    <option value="Berlin-SchÃ¶nefeld">Berlin-SchÃ¶nefeld</option>
+                    <option value="Berlin-Tegel">Berlin-Tegel</option>
+                    <option value="Braunschweig-Wolfsburg">Braunschweig-Wolfsburg</option>
+                    <option value="Dortmund">Dortmund</option>
+                    <option value="Dresde">Dresde</option>
+                </optgroup>
+                <optgroup label="Turquie">
+                    <option value="AtatÃ¼rk d'Istanbul">AtatÃ¼rk d'Istanbul</option>
+                    <option value="Sabiha-GÃ¶kÃ§en">Sabiha-GÃ¶kÃ§en</option>
+                    <option value="Antalya">Antalya</option>
+                    <option value="EsenboÄŸa">EsenboÄŸa</option>
+                </optgroup>
+            </select>
+
+        </div>
+
+
+        <div class="col-sm-6 m2">
+            <label for="examplegenre">Vers :</label>
+            <select name="B_LOCATION_2" class="form-control form-control-user" id="examplegenre">
+                <optgroup label="Tunisie">
+                    <option value="TUN">Tunis</option>
+                    <option value="Monastir">Monastir</option>
+                    <option value="Gafsa">Gafsa</option>
+                    <option value="Djerba">Djerba</option>
+                    <option value="Tabarka">Tabarka</option>
+                </optgroup>
+                <optgroup label="France">
+                    <option value="Bordeaux">Bordeaux</option>
+                    <option value="PAR">Paris</option>
+                    <option value="Dijon">Dijon</option>
+                    <option value="Grenoble">Grenoble</option>
+                </optgroup>
+                <optgroup label="Maroc">
+                    <option value="Casablanca">Casablanca</option>
+                    <option value="Menara">Menara</option>
+                    <option value="Al Massira">Al Massira</option>
+                    <option value="SaÃ¯ss">SaÃ¯ss</option>
+                    <option value="Ibn Batouta">Ibn Batouta</option>
+                </optgroup>
+                <optgroup label="BÃ©lgique">
+                    <option value="Bruxelles"> Bruxelles</option>
+                    <option value="Brussels South Charleroi">Brussels South Charleroi</option>
+                    <option value="LiÃ¨ge">LiÃ¨ge</option>
+                    <option value="Ostende-Bruges">Ostende-Bruges</option>
+                    <option value="Anvers">Anvers</option>
+                </optgroup>
+                <optgroup label="Allemagne">
+                    <option value="Berlin-SchÃ¶nefeld">Berlin-SchÃ¶nefeld</option>
+                    <option value="Berlin-Tegel">Berlin-Tegel</option>
+                    <option value="Braunschweig-Wolfsburg">Braunschweig-Wolfsburg</option>
+                    <option value="Dortmund">Dortmund</option>
+                    <option value="Dresde">Dresde</option>
+                </optgroup>
+                <optgroup label="Turquie">
+                    <option value="AtatÃ¼rk d'Istanbul">AtatÃ¼rk d'Istanbul</option>
+                    <option value="Sabiha-GÃ¶kÃ§en">Sabiha-GÃ¶kÃ§en</option>
+                    <option value="Antalya">Antalya</option>
+                    <option value="EsenboÄŸa">EsenboÄŸa</option>
+                </optgroup>
+            </select>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0 m2">
+            <label for="exampledatenaissance">Vol aller :</label>
+            <input type="date" class="form-control form-control-user" name="B_DATE_1" id="exampledatenaissance"
+                placeholder="Date">
+
+        </div>
+
+        <div class="col-sm-6 mb-3 mb-sm-0 m2">
+            <label for="exampledatenaissance">Vol retour :</label>
+            <input type="date" name="B_DATE_2" class="form-control form-control-user" id="exampledatenaissance"
+                placeholder="Date">
+
+        </div>
+        <input id="TITLE_1" name="TITLE_1" type="hidden" value="MR">
+        <input id="FIRST_NAME_1" name="FIRST_NAME_1" type="hidden" value="Test">
+        <input id="LAST_NAME_1" name="LAST_NAME_1" type="hidden" value="Zommit">
+        <input id="DATE_OF_BIRTH_1" name="DATE_OF_BIRTH_1" type="hidden" value="197005240000">
+        <input id="CONTACT_POINT_MOBILE_1_OC" name="CONTACT_POINT_MOBILE_1_OC" type="hidden" value="216">
+        <input id="CONTACT_POINT_MOBILE" name="CONTACT_POINT_MOBILE" type="hidden" value="58528522">
+        <input id="CONTACT_POINT_EMAIL_1" name="CONTACT_POINT_EMAIL_1" type="hidden" value="islemzommit@gmail.com">
+
+    </div>
+
+    <div class="row bb">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+            <button type="submit" (click)="form.submit()" class=" b1 btn btn-outline-danger">Rechercher</button>
+        </div>
+    </div>
+
+
+
+
+</form>
