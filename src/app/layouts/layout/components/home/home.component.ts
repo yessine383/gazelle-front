@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { BookingService } from '../../service/booking.service';
+import { UserService } from '../../../../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
   public intervale = [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   public bookingForm: FormGroup = new FormGroup({});
 
-  constructor(private formBuilder: FormBuilder,private service: BookingService) {}
+  constructor(private formBuilder: FormBuilder,private service: UserService) {}
 
   ngOnInit(): void {
     this.buildForm();

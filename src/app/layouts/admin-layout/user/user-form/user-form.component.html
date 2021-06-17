@@ -54,13 +54,11 @@
                         <div class="col-md-6 ">
                             <div class="form-group ">
                                 <label>Agence</label>
-                                <select formControlName="agency" class="form-control">
-                                    <option value="1">Agence 1 </option>
-                                    <option value="2">Agence 2 </option>
-                                    <option value="3">Agence 3 </option>
+                                <select formControlName="compteId" class="form-control">
+                                    <option *ngFor="let compte of comptes" value="compte.id"> {{compte?.organisme}} </option>
                                 </select>
                                 <span class="invalid-feedback d-block">
-                                <span class="error-box" *ngIf="userForm.get('agency').hasError('required') && userForm.submitted">
+                                <span class="error-box" *ngIf="userForm.get('compteId').hasError('required') && userForm.submitted">
                                     Ce champs est requis
                                 </span>
                                 </span>
@@ -69,13 +67,12 @@
                         <div class="col-md-6 ">
                             <div class="form-group ">
                                 <label>Role</label>
-                                <select formControlName="role" class="form-control">
-                                    <option value="ADMIN"> Administrateur </option>
-                                    <option value="SUPER_USER"> Super Utilisateur </option>
-                                    <option value="SIMPLE_USER"> Utilisateur </option>
+                                <select formControlName="roles" class="form-control">
+                                    <option value="ROLE_ADMIN" disabled> Administrateur </option>
+                                    <option value="ROLE_USER"> Utilisateur </option>
                                 </select>
                                 <span class="invalid-feedback d-block">
-                                <span class="error-box" *ngIf="userForm.get('role').hasError('required') && userForm.submitted">
+                                <span class="error-box" *ngIf="userForm.get('roles').hasError('required') && userForm.submitted">
                                     Ce champs est requis
                                 </span>
                                 </span>

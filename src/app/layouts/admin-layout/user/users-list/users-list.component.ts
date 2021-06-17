@@ -15,7 +15,7 @@ export class UsersListComponent implements OnInit {
   private subscription: Subscription = new Subscription();
   public users: any[] = [];
   public display: boolean = true;
-  searchText: string = null;
+  public searchElement = '';
   constructor(private userService: UserService, private modalService: NgbModal, private toastService: ToastrService) {}
 
   ngOnInit(): void {
@@ -26,7 +26,11 @@ export class UsersListComponent implements OnInit {
     this.subscription.add(
       this.userService.getListUserByAgence(id).subscribe(users => {
         this.users = users['hydra:member'];
-        console.log(users['hydra:member'][0]);
+        this.users.forEach(elm => {
+            this.userService.getCompteById(elm.compteId).subscribe(res => {
+              elm.organisme = res;
+            })
+        })
       })
     );
   }
@@ -67,6 +71,7 @@ export class UsersListComponent implements OnInit {
       if (result.value) {
         this.userService.deleteUser(id).subscribe(user => {
           Swal.fire('Deleted!', 'Your imaginary file has been deleted.', 'success');
+          this.ngOnInit();
           console.log('deleted user: ', user);
         });
       } else if (result.dismiss === Swal.DismissReason.cancel) {

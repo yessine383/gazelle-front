@@ -17,20 +17,17 @@
                     <!-- Tab panes -->
                     <div class="tab-content ">
                         <div role="tabpanel " class="tab-pane active ">
-                            <form #form class="user" method='POST'
-                                action='http://gazellePro.tunisair.com.tn/TUN/FO2-DEV/APP/Booking_API.php'>
+                            <form #form class="user" method='POST' action='http://gazellePro.tunisair.com.tn/TUN/FO2-DEV/APP/Booking_API.php'>
                                 <hr class="sidebar-divider">
                                 <div class="form-group row">
 
                                     <div class="col-sm-6">
-                                        <input class="rdb" id="allersimple" type="radio" autocomplete="off" value="O"
-                                            name="TRIP_TYPE">
+                                        <input class="rdb" id="allersimple" type="radio" autocomplete="off" value="O" name="TRIP_TYPE">
                                         <label for="allersimple">Aller Simple</label>
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <input class="rdb" id="allerretour" type="radio" autocomplete="off" value="R"
-                                            name="TRIP_TYPE">
+                                        <input class="rdb" id="allerretour" type="radio" autocomplete="off" value="R" name="TRIP_TYPE">
                                         <label for="allerretour">Aller Retour</label>
                                     </div>
 
@@ -41,8 +38,7 @@
                                 <div class="row">
                                     <div class="col-sm-6 m2">
                                         <label for="examplegenre">De :</label>
-                                        <select name="B_LOCATION_1" class="form-control form-control-user"
-                                            id="examplegenre">
+                                        <select name="B_LOCATION_1" class="form-control form-control-user" id="examplegenre">
                                             <optgroup label="Tunisie">
                                                 <option value="TUN">Tunis</option>
                                                 <option value="Monastir">Monastir</option>
@@ -91,8 +87,7 @@
 
                                     <div class="col-sm-6 m2">
                                         <label for="examplegenre">Vers :</label>
-                                        <select name="B_LOCATION_2" class="form-control form-control-user"
-                                            id="examplegenre">
+                                        <select name="B_LOCATION_2" class="form-control form-control-user" id="examplegenre">
                                             <optgroup label="Tunisie">
                                                 <option value="TUN">Tunis</option>
                                                 <option value="Monastir">Monastir</option>
@@ -142,36 +137,29 @@
                                 <div class="row">
                                     <div class="col-sm-6 mb-3 mb-sm-0 m2">
                                         <label for="exampledatenaissance">Vol aller :</label>
-                                        <input type="date" class="form-control form-control-user" name="B_DATE_1"
-                                            id="exampledatenaissance" placeholder="Date">
+                                        <input type="date" class="form-control form-control-user" name="B_DATE_1" id="exampledatenaissance" placeholder="Date">
 
                                     </div>
 
                                     <div class="col-sm-6 mb-3 mb-sm-0 m2">
                                         <label for="exampledatenaissance">Vol retour :</label>
-                                        <input type="date" name="B_DATE_2" class="form-control form-control-user"
-                                            id="exampledatenaissance" placeholder="Date">
+                                        <input type="date" name="B_DATE_2" class="form-control form-control-user" id="exampledatenaissance" placeholder="Date">
 
                                     </div>
                                     <input id="TITLE_1" name="TITLE_1" type="hidden" value="MR">
                                     <input id="FIRST_NAME_1" name="FIRST_NAME_1" type="hidden" value="Test">
                                     <input id="LAST_NAME_1" name="LAST_NAME_1" type="hidden" value="Zommit">
-                                    <input id="DATE_OF_BIRTH_1" name="DATE_OF_BIRTH_1" type="hidden"
-                                        value="197005240000">
-                                    <input id="CONTACT_POINT_MOBILE_1_OC" name="CONTACT_POINT_MOBILE_1_OC" type="hidden"
-                                        value="216">
-                                    <input id="CONTACT_POINT_MOBILE" name="CONTACT_POINT_MOBILE" type="hidden"
-                                        value="58528522">
-                                    <input id="CONTACT_POINT_EMAIL_1" name="CONTACT_POINT_EMAIL_1" type="hidden"
-                                        value="islemzommit@gmail.com">
+                                    <input id="DATE_OF_BIRTH_1" name="DATE_OF_BIRTH_1" type="hidden" value="197005240000">
+                                    <input id="CONTACT_POINT_MOBILE_1_OC" name="CONTACT_POINT_MOBILE_1_OC" type="hidden" value="216">
+                                    <input id="CONTACT_POINT_MOBILE" name="CONTACT_POINT_MOBILE" type="hidden" value="58528522">
+                                    <input id="CONTACT_POINT_EMAIL_1" name="CONTACT_POINT_EMAIL_1" type="hidden" value="islemzommit@gmail.com">
 
                                 </div>
 
                                 <div class="row bb">
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
-                                        <button type="submit" (click)="form.submit()"
-                                            class=" b1 btn btn-outline-danger">Rechercher</button>
+                                        <button type="submit" (click)="form.submit()" class=" b1 btn btn-outline-danger">Rechercher</button>
                                     </div>
                                 </div>
 

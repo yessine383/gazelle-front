@@ -18,6 +18,9 @@ export const AppRoutes: Routes = [
         path: '',
         loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule),
         //canActivate: [AuthGuard],
+        data: {
+          roles: ['ADMIN'],
+        },
       },
     ],
   },
@@ -25,6 +28,9 @@ export const AppRoutes: Routes = [
     path: 'home',
     loadChildren: () => import('./layouts/layout/layout.module').then(m => m.LayoutModule),
     //canActivate: [AuthGuard],
+    data: {
+      roles: ['ADMIN', 'USER'],
+    },
   },
 
   /*

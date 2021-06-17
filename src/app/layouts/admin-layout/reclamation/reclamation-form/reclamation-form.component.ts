@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from '../../../../services/user.service';
 
 @Component({
   selector: 'app-reclamation-form',
@@ -11,7 +12,7 @@ export class ReclamationFormComponent implements OnInit {
   public reclamationForm: FormGroup = new FormGroup({});
   public types = ['Demande de remboursement', 'Vol retarde ou annule', 'Autres'];
 
-  constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder) {}
+  constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder,private service: UserService) {}
 
   ngOnInit(): void {
     this.buildForm();
@@ -31,6 +32,10 @@ export class ReclamationFormComponent implements OnInit {
       let reclamation: any = {};
       reclamation = this.reclamationForm.value;
       console.log('reclamation: ', reclamation);
+      delete reclamation.file;
+      this.service.addReclamation(reclamation).subscribe(res => {
+        console.log('add success',res);
+      })
     }
   }
 

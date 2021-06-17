@@ -15,6 +15,7 @@ import { ChangeDetectorRef } from '@angular/core';
 export class UserFormComponent implements OnInit, OnChanges {
   @Input() user: User;
   public userForm: FormGroup = new FormGroup({});
+  public comptes = [];
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -32,11 +33,11 @@ export class UserFormComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.getAllAgence();
     this.buildForm();
     if (this.user) {
       this.updateForm(this.user);
     }
-
   }
 
   private buildForm() {
@@ -45,8 +46,8 @@ export class UserFormComponent implements OnInit, OnChanges {
         email: new FormControl('', [Validators.required]),
         password: new FormControl('', [Validators.required]),
         confirmPassword: new FormControl('', [Validators.required]),
-        agency: new FormControl('', [Validators.required]),
-        role: new FormControl('', [Validators.required]),
+        compteId: new FormControl('', [Validators.required]),
+        roles: new FormControl('', [Validators.required]),
       },
       { validator: this.passwordConfirming }
     );
@@ -56,22 +57,34 @@ export class UserFormComponent implements OnInit, OnChanges {
     this.userForm.patchValue({
       email: user.email,
       password: user.password,
-      agency: user.agenceId,
-      role: user.roles[0]
+      compteId: user.agenceId,
+      roles: user.roles[0],
     });
+  }
 
+  private getAllAgence() {
+    this.userService.getListComptes().subscribe(res => {
+      this.comptes = res;
+    });
   }
 
   submit() {
     if (this.userForm.valid) {
       let user = { ...this.userForm.value };
+      let roles = user.roles;
+      delete user.roles;
       delete user.confirmPassword;
+      user.roles = [roles];
+      user.compteId = parseInt(user.compteId);
       if (this.user) {
-        /*     this.userService.updateUser(this.user).subscribe( user => {
-              this.userService.userList.next(user);
-            }) */
-        console.log(user);
-
+        let roles = user.roles;
+        delete user.roles;
+        delete user.confirmPassword;
+        user.roles = [roles];
+        user.compteId = parseInt(user.compteId);
+        this.userService.updateUser(user).subscribe(user => {
+          this.userService.userList.next(user);
+        });
       } else {
         this.userService.addUser(user).subscribe(
           user => {
@@ -84,7 +97,6 @@ export class UserFormComponent implements OnInit, OnChanges {
           }
         );
       }
-
     }
   }
 

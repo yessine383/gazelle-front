@@ -4,24 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filterSearch',
 })
 export class FilterSearchPipe implements PipeTransform {
-  transform(categories: any, searchText: any): any {
-    if (searchText == null || searchText == '') {
-      return categories;
-    } else {
-      let filteredCategories = [];
-      categories.filter(function (category) {
-        category.filter(function (subCategory, index) {
-          //Search only by second criteria (in this case name)
-          if (index == 1) {
-            if (subCategory.toString().toLowerCase().indexOf(searchText.toLowerCase()) != -1) {
-              if (filteredCategories.indexOf(subCategory) == -1) {
-                filteredCategories.push(category);
-              }
-            }
-          }
-        });
-      });
-      return filteredCategories;
-    }
+  transform(value: any[], term: string): any[] {
+    if (!term) return value;
+    return value.filter((x: any) => x.email.toLowerCase().includes(term.toLowerCase()));
   }
 }

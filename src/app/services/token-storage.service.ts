@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
+const USERNAME = 'user';
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenStorageService {
-
-  constructor() { }
+  constructor() {}
 
   signOut() {
     window.sessionStorage.clear();
-    window.location.assign('http://localhost:4200/login')
-
+    window.location.assign('http://localhost:4200/login');
   }
 
   public saveToken(token: string) {
@@ -22,7 +22,10 @@ export class TokenStorageService {
   }
 
   public getToken(): string {
-    return sessionStorage.getItem(TOKEN_KEY);
+    if (sessionStorage.getItem(TOKEN_KEY)){
+        window.sessionStorage.setItem(USERNAME, this.getUser());
+    } return sessionStorage.getItem(TOKEN_KEY);
+
   }
 
   public saveUser(user) {
@@ -32,6 +35,10 @@ export class TokenStorageService {
 
   public getUser() {
     return JSON.parse(sessionStorage.getItem(USER_KEY));
+  }
+
+  public removeToken() {
+    return sessionStorage.clear();
   }
 }
 

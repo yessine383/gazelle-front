@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'app/layouts/admin-layout/user/Model/User';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
@@ -26,6 +26,11 @@ const api = './assets/users.json';
 export class UserService {
   public userList = new BehaviorSubject<any>('');
   url = 'http://www.gazellepro.tunisair.com.tn/tun/FO2-DEV/APP/booking_api.php';
+  optionRequete = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin': '*',
+    }),
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -42,7 +47,7 @@ export class UserService {
   }
 
   getListUserByAgence(id: String) {
-    return this.http.get<any>(`${API_URL}/users`, { responseType: 'json' });
+    return this.http.get<any>(`${API_URL}/users`);
   }
   public getListTransaction() {
     return this.http.get(`${API_URL}/transactions`, { responseType: 'json' });
@@ -58,5 +63,17 @@ export class UserService {
 
   public searchForBooking(booking: Booking) {
     return this.http.post(`${this.url}`, booking);
+  }
+
+  public addReclamation(reclamation: any) {
+    return this.http.post(`${API_URL}/reclamations`, reclamation, { responseType: 'json' });
+  }
+
+  getListComptes() {
+    return this.http.get<any>(`${API_URL}/comptes`, { responseType: 'json' });
+  }
+  
+  getCompteById(id) {
+    return this.http.get<any>(`${API_URL}/comptes/${id}`, { responseType: 'json' });
   }
 }

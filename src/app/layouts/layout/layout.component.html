@@ -15,18 +15,19 @@
                                     <!-- START #fh5co-menu-wrap -->
                                     <nav id="fh5co-menu-wrap" role="navigation">
                                         <ul class="sf-menu" id="fh5co-primary-menu">
-                                            <li><a href="/home">Acceuil</a></li>
-                                            <li>
+                                            <li><a [routerLink]="['/home']">Acceuil</a></li>
+                                            <li *ngIf="username != 'undefined'">
                                                 <a class="fh5co-sub-ddown sf-with-ul ">Operations</a>
                                                 <ul class="fh5co-sub-menu ">
                                                     <li><a [routerLink]="['/transactions']">Transactions</a></li>
                                                     <li><a [routerLink]="['/reclamations']">Recalamations</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a rou="flight.html ">Contrats</a></li>
-                                            <li><a [routerLink]="['/actualites']">Actualites</a></li>
-                                            <li><a href="car.html ">Mon Compte</a></li>
-                                            <li><a href="contact.html ">Deconnecter</a></li>
+                                            <li><a *ngIf="username != 'undefined'" [routerLink]="">Contrats</a></li>
+                                            <li><a *ngIf="username != 'undefined'" [routerLink]="['/actualites']">Actualites</a></li>
+                                            <li><a *ngIf="username != 'undefined'" href="car.html ">Mon Compte</a></li>
+                                            <li><a [routerLink]="['/login']" *ngIf="username == 'undefined'">Connecter</a></li>
+                                            <li><a (click)="logout()" *ngIf="username != 'undefined'">Deconnecter</a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -48,8 +49,7 @@
                                     <div class="row row-bottom-padded-md ">
                                         <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link ">
                                             <h3>About Travel</h3>
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia
-                                                and Consonantia, there live the blind texts.</p>
+                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                                         </div>
                                         <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link ">
                                             <h3>Top Flights Routes</h3>
@@ -107,10 +107,8 @@
                                                 <a href="# "><i class="icon-youtube "></i></a>
                                             </p>
                                             <p>Copyright 2016 Free Html5 <a href="# ">Module</a>. All Rights Reserved.
-                                                <br>Made with <i class="icon-heart3 "></i> by <a
-                                                    href="http://freehtml5.co/ " target="_blank
-                                                ">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/ "
-                                                    target="_blank ">Unsplash</a></p>
+                                                <br>Made with <i class="icon-heart3 "></i> by <a href="http://freehtml5.co/ " target="_blank
+                                                ">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/ " target="_blank ">Unsplash</a></p>
                                         </div>
                                     </div>
                                 </div>

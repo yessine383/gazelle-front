@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -6,6 +7,11 @@ import { Injectable } from '@angular/core';
 })
 export class ClientService {
   private url: string = 'http://localhost:8000/api/comptes';
+  optionRequete = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin': '*'
+    }),
+  };
   constructor(private http: HttpClient) {}
 
   getAllClients() {

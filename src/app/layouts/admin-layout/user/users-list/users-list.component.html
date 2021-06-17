@@ -18,8 +18,7 @@
                             <th class=""> </th>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of users ;let i=index">
-                                <!-- | filter: searchText-->
+                            <tr *ngFor="let user of users|  filterSearch :searchElement  ;let i=index">
                                 <td> {{user.email}} </td>
                                 <!-- <td>
                                     <div [id]="'input-pass-'+i">
@@ -36,7 +35,7 @@
                                 <td *ngIf="user.roles[0] == 'ROLE_ADMIN'"> Administrateur</td>
                                 <!--   <td *ngIf="user.roles[0] == 'SIMPLE_USER'"> Simple utilisateur</td> -->
 
-                                <td> {{user.agenceId}} </td>
+                                <td> {{user.organisme}} </td>
                                 <th class="operations-style">
                                     <div class="mr-2">
                                         <a (click)="deleteUser(user?.id)"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
